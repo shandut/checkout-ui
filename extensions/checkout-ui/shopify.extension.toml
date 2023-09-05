@@ -19,7 +19,7 @@ module = "./src/Checkout.jsx"
 target = "purchase.checkout.cart-line-item.render-after"
 
 [[extensions.targeting]]
-module = "./src/Banner.jsx"
+module = "./src/FOMOBanner.jsx"
 target = "purchase.checkout.contact.render-after"
 
 # target = "purchase.checkout.block.render"
