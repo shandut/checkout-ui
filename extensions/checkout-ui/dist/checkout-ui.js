@@ -1174,7 +1174,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState5(initialState) {
+          function useState7(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1186,7 +1186,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect5(create, deps) {
+          function useEffect7(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1758,13 +1758,13 @@
           exports.useCallback = useCallback2;
           exports.useContext = useContext3;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect5;
+          exports.useEffect = useEffect7;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect;
           exports.useMemo = useMemo2;
           exports.useReducer = useReducer;
           exports.useRef = useRef2;
-          exports.useState = useState5;
+          exports.useState = useState7;
           exports.version = ReactVersion;
         })();
       }
@@ -2578,11 +2578,11 @@
         module.exports = function $$$reconciler($$$hostConfig) {
           var exports2 = {};
           "use strict";
-          var React4 = require_react();
+          var React6 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2621,7 +2621,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment4 = 7;
+          var Fragment6 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -5292,7 +5292,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React4.Component().refs;
+          var emptyRefsObject = new React6.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -6075,7 +6075,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment4) {
+              if (current2 === null || current2.tag !== Fragment6) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -6444,7 +6444,7 @@
               while (child !== null) {
                 if (child.key === key) {
                   switch (child.tag) {
-                    case Fragment4: {
+                    case Fragment6: {
                       if (element.type === REACT_FRAGMENT_TYPE) {
                         deleteRemainingChildren(returnFiber, child.sibling);
                         var existing = useFiber(child, element.props.children);
@@ -10206,7 +10206,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment4:
+              case Fragment6:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -10566,7 +10566,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment4:
+              case Fragment6:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -15053,7 +15053,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment4, elements, key, mode);
+            var fiber = createFiber(Fragment6, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -15718,7 +15718,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       if (true) {
         (function() {
           "use strict";
-          var React4 = require_react();
+          var React6 = require_react();
           var _assign = require_object_assign();
           var REACT_ELEMENT_TYPE = 60103;
           var REACT_PORTAL_TYPE = 60106;
@@ -15775,7 +15775,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }
             return null;
           }
-          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function error(format) {
             {
               for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
@@ -16550,9 +16550,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx7 = jsxWithValidationDynamic;
+          var jsx9 = jsxWithValidationDynamic;
           var jsxs3 = jsxWithValidationStatic;
-          exports.jsx = jsx7;
+          exports.jsx = jsx9;
           exports.jsxs = jsxs3;
         })();
       }
@@ -17686,20 +17686,26 @@ ${errorInfo.componentStack}`);
       month: "long"
     });
     console.log(preorderDate);
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+    const randomNumber = Math.random();
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_jsx_runtime4.Fragment, { children: randomNumber < 0.5 ? /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Text2, { size: "base", appearance: "critical", children: [
-        "Pre-Order: Estimated to ship out by ",
+        "Pre-Order: Estimated to ship out by",
+        " ",
         /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "base", emphasis: "bold", children: preorderDate }),
         " or earlier"
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Divider, {})
-    ] });
+    ] }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "base", appearance: "critical", children: "Was" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { accessibilityRole: "deletion", size: "extraLarge", children: "$199.00" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Divider, {})
+    ] }) });
   }
 
-  // extensions/checkout-ui/src/Banner.jsx
+  // extensions/checkout-ui/src/FOMOBanner.jsx
   var import_react14 = __toESM(require_react());
   var import_jsx_runtime5 = __toESM(require_jsx_runtime());
-  var Banner_default = reactExtension(
+  var FOMOBanner_default = reactExtension(
     "purchase.checkout.contact.render-after",
     () => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Extension2, {})
   );
@@ -17755,6 +17761,8 @@ ${errorInfo.componentStack}`);
       }
     }, [showError]);
     return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text2, { accessibilityRole: "deletion", size: "extraLarge", children: "Testing Strikethrough Text" }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Spinner2, {}),
       /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text2, { size: "extraLarge", children: "\u{1F525}" }),
       /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text2, { size: "medium", emphasis: "bold", children: "  An item you have orders is in high demand. No worries, we have reserved your order. " }),
       /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(Banner2, { status: "warning", children: [
@@ -17790,5 +17798,55 @@ ${errorInfo.componentStack}`);
       }
     }, [showError]);
     return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_jsx_runtime6.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Banner2, { status: "critical", title: "Sure you have the right address?", children: "Please double-check your details. Incomplete or incorrect addresses will cause delays in your delivery." }) });
+  }
+
+  // extensions/checkout-ui/src/Block1.jsx
+  var import_react16 = __toESM(require_react());
+  var import_jsx_runtime7 = __toESM(require_jsx_runtime());
+  var Block1_default = reactExtension(
+    "purchase.checkout.reductions.render-before",
+    () => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Extension32, {})
+  );
+  function Extension32() {
+    const translate = useTranslate();
+    const { query, extension: extension2 } = useApi();
+    const [products, setProducts] = (0, import_react16.useState)([]);
+    const [loading, setLoading] = (0, import_react16.useState)(false);
+    const [showError, setShowError] = (0, import_react16.useState)(false);
+    const [cartline] = useCartLines();
+    const { merchandise } = cartline;
+    console.log(merchandise.title);
+    (0, import_react16.useEffect)(() => {
+      if (showError) {
+        const timer = setTimeout(() => setShowError(false), 3e3);
+        return () => clearTimeout(timer);
+      }
+    }, [showError]);
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_jsx_runtime7.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Divider, {}) });
+  }
+
+  // extensions/checkout-ui/src/Block2.jsx
+  var import_react17 = __toESM(require_react());
+  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
+  var Block2_default = reactExtension(
+    "purchase.checkout.reductions.render-after",
+    () => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Extension33, {})
+  );
+  function Extension33() {
+    const translate = useTranslate();
+    const { query, extension: extension2 } = useApi();
+    const [products, setProducts] = (0, import_react17.useState)([]);
+    const [loading, setLoading] = (0, import_react17.useState)(false);
+    const [showError, setShowError] = (0, import_react17.useState)(false);
+    const [cartline] = useCartLines();
+    const { merchandise } = cartline;
+    console.log(merchandise.title);
+    (0, import_react17.useEffect)(() => {
+      if (showError) {
+        const timer = setTimeout(() => setShowError(false), 3e3);
+        return () => clearTimeout(timer);
+      }
+    }, [showError]);
+    return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_jsx_runtime8.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Divider, {}) });
   }
 })();

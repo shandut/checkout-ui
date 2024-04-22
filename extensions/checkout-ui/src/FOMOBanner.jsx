@@ -90,8 +90,10 @@ function Extension2() {
 
   return (
     <>
+     <Text accessibilityRole="deletion" size="extraLarge">Testing Strikethrough Text</Text>
+    <Spinner></Spinner>
     <Text size="extraLarge">🔥</Text>
-    <Text size="medium" emphasis="bold">  An item you have orders is in high demand. No worries, we have reserved your order. </Text>
+    <Text  size="medium" emphasis="bold">  An item you have orders is in high demand. No worries, we have reserved your order. </Text>
    <Banner status="warning">Your order is reserved for {timeLeft.minutes}:{timeLeft.seconds < 10 ? `0${timeLeft.seconds}` : timeLeft.seconds} minutes! </Banner>
     </>
   );

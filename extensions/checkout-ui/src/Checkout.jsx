@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// import {Price}from '../src/Price';
 import {
   Banner,
   Text,
@@ -117,11 +118,27 @@ const preorderDate = new Date(products.product.variantBySelectedOptions.preorder
 //console.log(myDate);
 console.log(preorderDate);
 
+//Randomly show the preorder date text or checkout or the Was 199 strikethrough price depending on the number. 
+const randomNumber = Math.random();
+
   return (
     <>
-    <Text size="base" appearance="critical" >Pre-Order: Estimated to ship out by <Text size="base" emphasis="bold">{preorderDate}</Text> or earlier</Text>
-    <Divider/>
-    </>
+    {randomNumber < 0.5 ? (
+      <>
+        <Text size="base" appearance="critical">
+          Pre-Order: Estimated to ship out by{' '}
+          <Text size="base" emphasis="bold">{preorderDate}</Text> or earlier
+        </Text>
+        <Divider/>
+      </>
+    ) : (
+      <>
+        <Text size="medium" appearance="critical">Was:</Text>
+        <Text accessibilityRole="deletion" size="medium">$199.00</Text>
+        <Divider/>
+      </>
+    )}
+  </>
   );
 }
 
@@ -132,9 +149,12 @@ console.log(preorderDate);
 
 function ErrorBanner() {
   return (
+    <>
+    <Price></Price>
     <Banner status='critical'>
       There was an issue adding this product. Please try again.
     </Banner>
+    </>
   );
 }
 

@@ -28,6 +28,14 @@ target = "purchase.checkout.contact.render-after"
 module = "./src/Block.jsx"
 target = "purchase.checkout.block.render"
 
+[[extensions.targeting]]
+module = "./src/Block1.jsx"
+target = "purchase.checkout.reductions.render-before"
+
+[[extensions.targeting]]
+module = "./src/Block2.jsx"
+target = "purchase.checkout.reductions.render-after"
+
 
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.
